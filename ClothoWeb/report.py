@@ -15,12 +15,15 @@ class ClothoWebReport:
     def pull_product_box_attributes(self):
         collection = []
         for product_box in self.product_boxes:
-            product_title = product_box.find_element(
-                By.CSS_SELECTOR, 'div.overflowFade_zrNEl'
-            ).get_attribute('innerText')
-            product_price = product_box.find_element(
-                By.CLASS_NAME, 'span.price_CMH3V'
-            ).get_attribute('innerText')
+            try:
+                product_title = product_box.find_element(
+                    By.CSS_SELECTOR, 'div.overflowFade_zrNEl'
+                ).get_attribute('innerText')
+                product_price = product_box.find_element(
+                    By.CLASS_NAME, 'container_wtrEy'
+                ).get_attribute('innerText')
+            except:
+                continue
 
             collection.append(
                 [product_title, product_price]

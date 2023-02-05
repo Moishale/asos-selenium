@@ -3,10 +3,6 @@ from ClothoWeb.clothoweb import ClothoWeb
 
 with ClothoWeb() as bot:
     bot.land_first_page()
-    bot.select_product_to_search(input('Enter Product:'))
-    bot.apply_filtrations()
+    bot.select_product_to_search('t shirt')
     bot.report_results()
-    time.sleep(20)
-
-
     

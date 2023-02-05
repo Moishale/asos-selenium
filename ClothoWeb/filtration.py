@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
@@ -20,6 +22,8 @@ class ClothoWebFiltration:
         return gender_options
 
     def _select_genders(self, gender_options):
+        time.sleep(2)
+
         if 'men' in self.genders:
             gender_options[0].click()
         if 'women' in self.genders:

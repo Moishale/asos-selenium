@@ -17,10 +17,8 @@ class ClothoWeb(webdriver.Chrome):
         self.service = Service(ChromeDriverManager().install())
         self.teardown = teardown
         self.options = webdriver.ChromeOptions()
-        self.options.add_experimental_option(
-            'excludeSwitches', ['enable-logging'])
-        super(ClothoWeb, self).__init__(service=self.service,
-                                        options=self.options, service_log_path='NUL')
+        self.options.add_experimental_option('excludeSwitches', ['enable-logging'])
+        super(ClothoWeb, self).__init__(service=self.service,options=self.options, service_log_path='NUL')
         self.implicitly_wait(15)
         self.maximize_window()
 
@@ -60,4 +58,3 @@ class ClothoWeb(webdriver.Chrome):
         )
         table.add_rows(report.pull_product_box_attributes())
         print(table)
-
