@@ -45,7 +45,7 @@ class ClothoWebFiltration:
 
     def _close_filter_box(self):
         self.driver.find_element(
-            By.CSS_SELECTOR, "#plp > div > div.container_TILjd > div > div > div.horizontalRefinements_qVf1h > ul > li:nth-child(3) > div > button").send_keys(Keys.ESCAPE)
+            By.CSS_SELECTOR, '#plp > div > div.container_TILjd > div > div > div.horizontalRefinements_qVf1h > ul > li:nth-child(3) > div > button').send_keys(Keys.ESCAPE)
 
     def sort_price_lowest_first(self):
         sorting_box = self.driver.find_element(
