@@ -41,7 +41,7 @@ class ClothoWebFiltration:
                 actions.click().perform()
                 sleep(2)
         except Exception as e:
-            print("An error occurred:", e)
+            print('An error occurred:', e)
 
     def _close_filter_box(self):
         self.driver.find_element(
