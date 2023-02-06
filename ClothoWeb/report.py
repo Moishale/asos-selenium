@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
+import traceback
 
 
 class ClothoWebReport:
@@ -20,9 +21,17 @@ class ClothoWebReport:
                     By.CSS_SELECTOR, 'div.overflowFade_zrNEl'
                 ).get_attribute('innerText')
                 product_price = product_box.find_element(
-                    By.CLASS_NAME, 'container_wtrEy'
+                    By.CLASS_NAME, 'price_CMH3V'
                 ).get_attribute('innerText')
+
+                sale_price_element = product_box.find_element(
+                    By.CLASS_NAME, 'saleAmount_C4AGB'
+                )
+                if sale_price_element:
+                    product_price = sale_price_element.get_attribute(
+                        'innerText')
             except:
+                traceback.print_exc()
                 continue
 
             collection.append(
