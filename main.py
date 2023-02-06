@@ -3,7 +3,7 @@ from ClothoWeb.clothoweb import ClothoWeb
 
 with ClothoWeb() as bot:
     bot.land_first_page()
-    bot.apply_filtrations()
     bot.select_product_to_search('t shirt')
+    bot.apply_filtrations()
     bot.report_results()
     
