@@ -6,4 +6,3 @@ with ClothoWeb() as bot:
     bot.select_product_to_search('t shirt')
     bot.apply_filtrations()
     bot.report_results()
-    
