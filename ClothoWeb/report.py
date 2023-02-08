@@ -24,17 +24,26 @@ class ClothoWebReport:
                     By.CLASS_NAME, 'price_CMH3V'
                 ).get_attribute('innerText')
 
-                sale_price_element = product_box.find_element(
-                    By.CLASS_NAME, 'saleAmount_C4AGB'
-                )
-                if sale_price_element:
-                    product_price = sale_price_element.get_attribute(
-                        'innerText')
+                try:
+                    sale_price_element = product_box.find_element(
+                        By.CLASS_NAME, 'saleAmount_C4AGB'
+                    )
+                    if sale_price_element:
+                        product_price = sale_price_element.get_attribute(
+                            'innerText')
+                except:
+                    collection.append([
+                        product_title,
+                        product_price
+                    ])
+
+                collection.append([
+                    product_title,
+                    product_price
+                ])
+
             except:
                 traceback.print_exc()
                 continue
 
-            collection.append(
-                [product_title, product_price]
-            )
         return collection
